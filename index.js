@@ -57,7 +57,7 @@ const handleLoad = async (id) => {
           </div>
           <div class='ms-2'>
             <h6 class='mb-2'>${item.author.name}</h6>
-            <h5>${item.rating.number}</h5>
+            <h5>${item.total_view?item.total_view:'no viewer'}</h5>
           </div>
         </div>
         <div class="card-detaild-btn">
