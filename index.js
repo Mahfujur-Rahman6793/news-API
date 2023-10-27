@@ -39,7 +39,7 @@ const handleLoad = async (id) => {
     <div class="card-body">
       <h2 class="card-title">
         ${item.title}
-        <div class="badge badge-secondary p-5">Excellent</div>
+        <div class="badge badge-secondary p-5">${item.rating.badge}</div>
       </h2>
       <p>
         ${item.author.published_date}
@@ -76,3 +76,4 @@ const handleLoad = async (id) => {
   });
 };
 handleCategory();
+handleLoad('01');
