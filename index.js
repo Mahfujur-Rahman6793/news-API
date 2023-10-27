@@ -29,16 +29,47 @@ const handleLoad = async (id) => {
   specifiedData.map((item) => {
     const section = document.createElement("section");
     section.innerHTML = `
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure><img src=${item.image_url} alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-      <button class="btn btn-primary">Read More</button>
+    <div class="card w-96 bg-base-100 shadow-xl">
+    <figure>
+      <img
+        src=${item.image_url}
+        alt="Shoes"
+      />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        ${item.title}
+        <div class="badge badge-secondary p-5">Excellent</div>
+      </h2>
+      <p>
+        ${item.author.published_date}
+      </p>
+      <div class="card-footer flex justify-between mt-8">
+        <div class="flex">
+          <div>
+            <div class="avatar online">
+              <div class="w-14 rounded-full">
+                <img
+                  src=${item.author.img}
+                />
+              </div>
+            </div>
+          </div>
+          <div class='ms-2'>
+            <h6 class='mb-2'>${item.author.name}</h6>
+            <h5>${item.rating.number}</h5>
+          </div>
+        </div>
+        <div class="card-detaild-btn">
+          <button
+            class="inline-block cursor-pointer rounded-md bg-gray-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900"
+          >
+            Details
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
         `;
         
     cardContainer.appendChild(section);
